@@ -11,5 +11,6 @@ import { FooterComponent } from "./commons/footer/footer.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  appModule!: any;
   title = 'Porte Folio';
 }

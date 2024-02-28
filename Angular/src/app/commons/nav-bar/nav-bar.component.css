@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bodyNavBar {
+    height: 100vh;
+    background-image: url("../../../assets/img/home.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #d1eb3e
+}
+
+.headNavBar {
+    position: relative;
+    padding: 0 2rem;
+    background-color: rgba(0, 0, 0, 0.425);
+}
+
+.navBar {
+    width: 100%;
+    max-width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navBar .liens {
+    display: flex;
+    gap: 2rem;
+}
+
+.navBar .burger-menu-boutton {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.bouttons {
+    display: flex;
+    gap: 20px;
+}
+
+.action-boutton {
+    background-color: #d1eb3e;
+    color: #120d31;
+    border: 1px solid #d1eb3e;
+    padding: 0.5rem 1.2rem;
+    border-radius:  5px;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action-boutton:hover{
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.pro{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.pro:hover{
+    background-color: #fff;
+    color: #120d31;
+}
+/* -----------------  Burger Menu  ----------------- */
+.burger-menu{
+    /* display: none;
+    height: 0; */
+    height: 320px;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.425);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.burger-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.diviseur{
+    height: 1px;
+    background-color: #fff;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+.burger-menu .action-boutton{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bouttons-burger-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* -----------------  RESPONSIVE   ----------------- */
+
+@media (max-width: 990px){
+    .headNavBar{
+        background: none;
+    }
+
+    .navBar .liens,
+    .navBar .action-boutton{
+        display: none;
+    }
+
+    .navBar .burger-menu-boutton{
+        display: block;
+    }
+}
