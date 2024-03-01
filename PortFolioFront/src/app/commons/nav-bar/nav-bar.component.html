@@ -1,0 +1,36 @@
+<div class="bodyNavBar">
+  <div class="headNavBar">
+    <div class="navBar">
+      <div class="logo">
+        <a href="#">PorteFolio</a>
+      </div>
+      <ul class="liens">
+        <li><a href="Accueil">Accueil</a></li>
+        <li><a href="Projets">Projets</a></li>
+        <li><a href="aPropos">A Propos</a></li>
+        <li><a href="Contact">Contact</a></li>
+      </ul>
+      <div class="bouttons">
+        <a href="#" class="action-boutton pro">Espace Pro</a>
+        <a href="#" class="action-boutton">Connexion</a>
+      </div>
+      <div class="burger-menu-boutton">
+        <fa-icon (click)="afficherBurgerMenu()"  [icon]="faBars"></fa-icon>
+      </div>
+    </div>
+      <div class="burger-menu" [@activation]="burgerMenuIsOpen">
+        <ul class="liens">
+          <li><a href="Accueil">Accueil</a></li>
+          <li><a href="Projets">Projets</a></li>
+          <li><a href="aPropos">A Propos</a></li>
+          <li><a href="Contact">Contact</a></li>
+          <div class="diviseur"></div>
+          <div class="bouttons-burger-menu">
+            <a href="#" class="action-boutton pro">Espace Pro</a>
+            <a href="#" class="action-boutton">Connexion</a>
+          </div>
+        </ul>
+      </div>
+  </div>
+</div>
+
