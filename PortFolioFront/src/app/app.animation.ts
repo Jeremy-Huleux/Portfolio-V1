@@ -1,15 +1,14 @@
 import { trigger, state, style} from '@angular/animations';
 
-export const burgerAnimation = 
+export const burgerIsActive = 
     trigger('activation', [
-        state('active', 
+        state('ouvert', 
             style({ 
-                height: '280px'
+                'margin-top': '280px'
             })),
-        state('desactive', 
+        state('ferme', 
             style({ 
-                height: '0px' 
+                'margin-top': '0px' 
             }))
         ]
     );
-    

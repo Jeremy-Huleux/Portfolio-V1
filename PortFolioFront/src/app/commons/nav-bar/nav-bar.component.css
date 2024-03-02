@@ -156,7 +156,7 @@ a:hover {
     }
 
     .burger-menu{
-        display: block;
+        display: block; 
     }
 }
 @media (max-width: 576px){
