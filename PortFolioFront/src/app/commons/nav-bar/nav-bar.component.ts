@@ -16,7 +16,7 @@ import { BurgerMenuService } from '../../services/burgerMenu.service';
 export class NavBarComponent{
   faBars = faBars;
   burgerMenuIsOpen!: string;
-  constructor(private observeSubjectMenuBurger$ : BurgerMenuService) { }
+  constructor(private MenuBurger$ : BurgerMenuService) { }
   /**
    * fonction permettant d'activer ou non le menu burger 
    * (visible uniquement sur petit ecran)
@@ -31,21 +31,30 @@ export class NavBarComponent{
    */
   afficherBurgerMenu(){
     if(this.burgerMenuIsOpen === 'active'){
-      this.observeSubjectMenuBurger$.setObserveMenuBurger(false);
+      this.MenuBurger$.setObserveMenuBurger(false);
       this.burgerMenuIsOpen = 'desactive';
       this.faBars = faBars;
     }else{
-      this.observeSubjectMenuBurger$.setObserveMenuBurger(true);
+      this.MenuBurger$.setObserveMenuBurger(true);
       this.burgerMenuIsOpen = 'active';
       this.faBars = faXmarkSquare;
     }
   }
 
+  /**
+  * Ecouteur d'evenement
+  * @param event ,variable qui détiens les evenements du changement de taille de fenêtre
+  * lorsque la taille de l'écrans dépasse 990px (voir css)
+  * on ferme le menu, car lorsqu'il a été ouvert grâce au bouton
+  * une animation angular/typeScript se déclanche pour changer le css
+  * donc la propriété css @media ne fonctionne plus
+  */
+
   @HostListener('window:resize', ['$event'])
     onResize(event: Event){
       if((event.target as Window).innerWidth > 990){
         this.burgerMenuIsOpen = 'desactive';
-        this.observeSubjectMenuBurger$.setObserveMenuBurger(false);
+        this.MenuBurger$.setObserveMenuBurger(false);
         this.faBars = faBars;
       }
     }
