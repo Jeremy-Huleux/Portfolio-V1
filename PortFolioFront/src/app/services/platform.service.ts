@@ -6,10 +6,10 @@ import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 })
 export class PlatformService {
 
-constructor(
-  @Inject(PLATFORM_ID)
-  private platformId: Object
-) { }
+  constructor(
+    @Inject(PLATFORM_ID)
+    private platformId: Object
+  ) { }
 
   isOnVue():boolean{
     return isPlatformBrowser(this.platformId);

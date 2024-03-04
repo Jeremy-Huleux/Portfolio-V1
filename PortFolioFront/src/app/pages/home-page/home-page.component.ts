@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, afterNextRender} from '@angular/core';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PlatformService } from '../../services/platform.service';
@@ -47,7 +47,7 @@ magicianisation(){
  */
 ngOnInit() {
   if(this.platformService.isOnVue()){
-    this.magicianisation(); 
+      this.magicianisation(); 
   }  
 }
 

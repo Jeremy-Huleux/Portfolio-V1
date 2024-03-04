@@ -1,16 +1,21 @@
-
+*{
+    z-index: 10;
+}
 
 section {
+    /* margin-top: 300px; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     min-height: 100vh;
 }
 
 h1{
-
     color: #111;
+}
 
+p{
+    color: #fff;
 }
 
 .magicText{
@@ -20,6 +25,7 @@ h1{
     font-weight: 400;
     text-transform: uppercase;
     -webkit-box-reflect: below -28px linear-gradient(transparent, #0002);
+    
 }
 
 .magicText span:nth-child(n+2){
