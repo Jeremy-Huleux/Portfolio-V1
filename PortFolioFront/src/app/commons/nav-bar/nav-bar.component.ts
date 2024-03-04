@@ -2,7 +2,7 @@ import { Component, HostListener} from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faXmarkSquare } from '@fortawesome/free-solid-svg-icons';
-import { burgerAnimation } from './nav-bar.animations';
+import { burgerAnimation} from './nav-bar.animations';
 import { BurgerMenuService } from '../../services/burgerMenu.service';
 
 @Component({
@@ -16,6 +16,7 @@ import { BurgerMenuService } from '../../services/burgerMenu.service';
 export class NavBarComponent{
   faBars = faBars;
   burgerMenuIsOpen!: string;
+  headNavBar: string = "headNavBar";
   constructor(private MenuBurger$ : BurgerMenuService) { }
   /**
    * fonction permettant d'activer ou non le menu burger 
@@ -58,4 +59,14 @@ export class NavBarComponent{
         this.faBars = faBars;
       }
     }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(scroll: Event){
+    if(document.documentElement.scrollTop > 0){
+      this.headNavBar = 'headNavBar colle';
+    }else if(document.documentElement.scrollTop === 0) {
+      this.headNavBar = 'headNavBar';
+    }
+  }
+      
 }

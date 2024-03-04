@@ -1,4 +1,29 @@
-p, h1, h2, h3{
-    color: #fff;
-    /* margin-top: 280px; */
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
+
+h1{
+
+    color: #111;
+
+}
+
+.magicText{
+    color: #fff;
+    font-size: 4em;
+    display: flex;
+    font-weight: 400;
+    text-transform: uppercase;
+    -webkit-box-reflect: below -28px linear-gradient(transparent, #0002);
+}
+
+.magicText span:nth-child(n+2){
+    color: #d1eb3e;
+    font-weight: 700;
+}
+

@@ -9,11 +9,11 @@ export const burgerIsActive =
     trigger('activation', [
         state('ouvert', //le state de burgerMenuIsOpen 
             style({ 
-                'margin-top': '280px' //On redéfini le CSS
+                'margin-top': '380px' //On redéfini le CSS
             })),
         state('ferme', 
             style({ 
-                'margin-top': '0px' 
+                'margin-top': '100px' 
             })),
         state('ouvertMid', 
             style({ 
