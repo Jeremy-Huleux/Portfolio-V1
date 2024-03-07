@@ -17,3 +17,15 @@ export const burgerAnimation =
             }))
         ]
     );
+    export const accueilColleActive = 
+    trigger('accueilColleActif', [
+        state('desactivationTransition', //le state de burgerMenuIsOpen 
+            style({ 
+                transition: 'none' //le style height est défini à 280px
+            })),
+        state('activationTransition', 
+            style({ 
+                transition: '0.6s' 
+            }))
+        ]
+    );

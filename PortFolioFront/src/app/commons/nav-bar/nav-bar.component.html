@@ -2,37 +2,40 @@
   <div [class]="headNavBar">
     <div class="navBar">
       <div class="logo">
-        <a href="#">Porte<span>Folio</span></a>
+        <a [style]="color" href="#">Porte<span [style]="color">Folio</span></a>
       </div>
       <ul class="liens">
-        <li><a href="Accueil">Accueil</a></li>
-        <li><a href="Projets">Projets</a></li>
-        <li><a href="aPropos">A propos</a></li>
-        <li><a href="Contact">Contact</a></li>
+        <li><a href="home#accueil" [@accueilColleActif]="colleActif" id="accueilNavBar" [class]="activeAccueil" [style]="color">Accueil</a></li>
+        <li><a href="home#projets" [class]="activeProjets" [style]="color">Projets</a></li>
+        <li><a href="home#apropos" [class]="activeApropos" [style]="color">A propos</a></li>
+        <li><a href="home#contact" [class]="activeContact" [style]="color">Contact</a></li>
       </ul>
       <div class="bouttons">
-        <a href="#" class="action-boutton pro">Espace Pro</a>
-        <a href="#" class="action-boutton">Connexion</a>
+        <a href="#" class="action-boutton pro" [style]="color">Inscription</a>
+        <a href="#" class="action-boutton" [style]="color">Connexion</a>
       </div>
       <div class="burger-menu-boutton">
         <fa-icon (click)="afficherBurgerMenu()"  [icon]="faBars"></fa-icon>
       </div>
     </div>
+    
       <div class="burger-menu" [@activation]="burgerMenuIsOpen">
         <ul class="liens">
-          <li><a href="Accueil">Accueil</a></li>
-          <li><a href="Projets">Projets</a></li>
-          <li><a href="aPropos">A Propos</a></li>
-          <li><a href="Contact">Contact</a></li>
+          <li><a href="home#accueil">Accueil</a></li>
+          <li><a href="home#projets">Projets</a></li>
+          <li><a href="home#apropos">A Propos</a></li>
+          <li><a href="home#contact">Contact</a></li>
           <div class="diviseur"></div>
           <div class="bouttons-burger-menu">
-            <a href="#" class="action-boutton pro">Espace Pro</a>
+            <a href="#" class="action-boutton pro">Inscription</a>
             <a href="#" class="action-boutton">Connexion</a>
           </div>
         </ul>
       </div>
+      <div class="separateur" [style]="color"></div> 
   </div>
-  <section class="banner"></section>
+
 </div>
 
+<!-- [style]="color" -->
 

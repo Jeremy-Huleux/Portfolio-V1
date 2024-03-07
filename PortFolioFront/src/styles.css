@@ -1,14 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-
+*{
+    scroll-behavior: smooth;
+}
 /* body {
     height: 100vh;
     background-image: url("/assets/img/home.jpg");
     background-size: cover;
     background-position: center;
 }  */
+head{
+    background-color: #d1eb3e;
+}
 body{
-    height: 100vh;
-    background-image: url("/assets/img/home.jpg");
-    background-size: cover;
-    background-position: center;
+    background-color: #333;
+    /* height: 100vh; */
+    /* background-image: url("/assets/img/home.jpg"); */
+    /* background-size: cover; */
+    /* background-position: center; */
 }

@@ -9,7 +9,11 @@ import { burgerIsActive } from './app.animation';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavBarComponent, FooterComponent],
+  imports: [
+    RouterOutlet, 
+    NavBarComponent, 
+    FooterComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   animations: [burgerIsActive]
@@ -56,14 +60,14 @@ export class AppComponent implements OnInit{
   * Ecouteur d'evenement
   * @param event ,variable qui détiens les evenements 
   * du changement de taille de fenêtre
-  * lorsque la taille de l'écrans est inférieur à 990px (voir nav-bar.css)
+  * lorsque la taille de l'écrans est inférieur à 1145px (voir nav-bar.css)
   * et que l'écrans est supérieur à 576px (voir nav-bar.css)
   * on considère que l'écrans est de taille moyenne donc on set
   * @ecransMid à true
   */
   @HostListener('window:resize', ['$event'])
     onResize(event: Event){
-        if((event.target as Window).innerWidth < 990 
+        if((event.target as Window).innerWidth < 1145 
             && (event.target as Window).innerWidth > 576){
               this.ecransMid = true;
         }else{
