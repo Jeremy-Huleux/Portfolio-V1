@@ -2,6 +2,16 @@
 *{
     scroll-behavior: smooth;
 }
+
+:root {
+    --bg-color-diplome: #520052;
+    --2nd-bg-color-diplome: #750075;
+    --text-color-diplome: #ff00ff;
+    --bg-color-competences: #121212;
+    --2nd-bg-color-competences: #5a5a5a;
+    --text-color-competences: #165a70;
+}
+
 /* body {
     height: 100vh;
     background-image: url("/assets/img/home.jpg");

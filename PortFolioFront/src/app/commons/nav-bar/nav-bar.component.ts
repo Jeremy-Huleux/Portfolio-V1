@@ -22,13 +22,22 @@ export class NavBarComponent implements OnInit{
   activeProjets : string = "";
   activeApropos : string = "";
   activeContact : string = "";
+  activeDiplome : string = "";
+  activeCompetences: string = "";
   positionAccueil!: any;
   positionProjets!: any;
   positionApropos!: any;
   positionContact!: any;
+  positionDiplome!: any;
+  positionCompetences!: any;
   scroll!: any;
   colleActif! : string;
   color!: string;
+  onAccueil : string = "";
+
+
+
+  
 
 
   constructor(private MenuBurger$ : BurgerMenuService, private platformService: PlatformService) { }
@@ -81,7 +90,9 @@ export class NavBarComponent implements OnInit{
     // (elle récupère chaque position des sections via leurs id voir HTML home-page)
     this.positionAccueil = document.getElementById('accueil')?.getBoundingClientRect();
     this.positionProjets = document.getElementById('projets')?.getBoundingClientRect();
+    this.positionDiplome = document.getElementById('diplomes')?.getBoundingClientRect();
     this.positionApropos = document.getElementById('apropos')?.getBoundingClientRect();
+    this.positionCompetences = document.getElementById('competences')?.getBoundingClientRect();
     this.positionContact = document.getElementById('contact')?.getBoundingClientRect();
     // On verifie si on est dans la section accueil
     if( this.positionAccueil && 
@@ -92,8 +103,11 @@ export class NavBarComponent implements OnInit{
           //<a></a> faisant l'ancre avec la section via un [class]="variable"
       this.activeAccueil = "active";
       this.activeProjets = "";
+      this.activeDiplome = "";
       this.activeApropos = "";
       this.activeContact = "";
+      this.activeCompetences = "";
+      this.onAccueil = "accueilActif";
       this.color = "--clr: #d1eb3e";
     }
     // On verifie si on est dans la section Projets
@@ -104,8 +118,11 @@ export class NavBarComponent implements OnInit{
       this.colleActif = "desactivationTransition"; // On désactive la transition du <a></a> accueil 
       this.activeAccueil = "";
       this.activeProjets = "active";
+      this.activeDiplome = "";
       this.activeApropos = "";
       this.activeContact = "";
+      this.activeCompetences = "";
+      this.onAccueil = "";
       this.color = "--clr: #16b84e";
     }
     // On verifie si on est dans la section Accueil avec une marge "anti bug de rush scroll rapide vers le haut"
@@ -123,8 +140,11 @@ export class NavBarComponent implements OnInit{
       this.activeAccueil = "";
       this.activeProjets = "";
       this.activeApropos = "active";
+      this.activeDiplome = "";
       this.activeContact = "";
-      this.color = "--clr: #17c0eb";
+      this.activeCompetences = "";
+      this.onAccueil = "";
+      this.color = "--clr: #112e42";
     }
     // On vérifie si on est dans la section Contact
     if( this.positionContact && 
@@ -134,8 +154,37 @@ export class NavBarComponent implements OnInit{
       this.activeAccueil = "";
       this.activeProjets = "";
       this.activeApropos = "";
+      this.activeDiplome = "";
       this.activeContact = "active";
+      this.activeCompetences = "";
+      this.onAccueil = "";
       this.color = "--clr: #f7c59f";
+    }
+    if( this.positionDiplome && 
+      this.positionDiplome.top <= 80 &&
+      Math.abs(this.positionDiplome.top) < this.positionDiplome.height + 70
+      ){
+      this.activeAccueil = "";
+      this.activeProjets = "";
+      this.activeApropos = "";
+      this.activeDiplome = "active";
+      this.activeContact = "";
+      this.activeCompetences = "";
+      this.onAccueil = "";
+      this.color = "--clr: #520052";
+    }
+    if( this.positionCompetences && 
+      this.positionCompetences.top <= 80 &&
+      Math.abs(this.positionCompetences.top) < this.positionCompetences.height + 70
+      ){
+      this.activeAccueil = "";
+      this.activeProjets = "";
+      this.activeApropos = "";
+      this.activeDiplome = "";
+      this.activeContact = "";
+      this.activeCompetences = "active";
+      this.onAccueil = "";
+      this.color = "--clr: #121212";
     }
 
   }
@@ -149,7 +198,10 @@ export class NavBarComponent implements OnInit{
         this.activeAccueil = "active";
         this.activeProjets = "";
         this.activeApropos = "";
+        this.activeDiplome = "";
         this.activeContact = "";
+        this.activeCompetences = "";
+        this.onAccueil = "accueilActif";
         this.color = "--clr: #d1eb3e";
       }
     }  
