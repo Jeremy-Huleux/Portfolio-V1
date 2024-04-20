@@ -109,11 +109,11 @@ section#accueil{
     background: #333;
 }
 .accueil-sci{
-    position: absolute;
+    /* position: absolute;  */
     bottom: 4rem;
     width: 170px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 .accueil-sci a{
     text-decoration: none;
@@ -154,7 +154,8 @@ section#accueil{
     top: 0;
     right: 0;
     width: 33%;
-    height: 100%;
+    height: 100vh; 
+    /* TODO : changer le height pour qu'il soit 100% de la taille de content accueil pas l'écrans */
     background: transparent;
     transition: 3s;
 }
